@@ -35,6 +35,12 @@ docker compose up -d --build
 
 Открыть `http://localhost:8080`. Swagger UI: `http://localhost:8080/api/docs`.
 
+## Бесплатная публикация
+
+Проект подготовлен к бесплатному запуску на Render без отдельного Ubuntu-сервера.
+React, FastAPI и миграции упакованы в один контейнер, а PostgreSQL создаётся автоматически
+из `render.yaml`. Пошаговая инструкция: [`docs/render-free.md`](docs/render-free.md).
+
 ## Локальная разработка
 
 Frontend:

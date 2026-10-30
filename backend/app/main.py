@@ -1,10 +1,13 @@
 import logging
 import time
 import uuid
+from pathlib import Path
+
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import FileResponse, JSONResponse
+from fastapi.staticfiles import StaticFiles
 from app.config import settings
 from app.routers import auth, authors, books, genres, loans, wishlist
 
@@ -40,4 +43,27 @@ def health():
 
 for router in (auth.router, books.router, authors.router, genres.router, loans.router, wishlist.router):
     app.include_router(router, prefix="/api/v1")
+
+
+# The Render image contains the compiled React application in /app/static.
+# During backend-only development and tests this directory is absent, so the
+# API keeps working exactly as before.
+static_dir = Path(__file__).resolve().parent.parent / "static"
+if static_dir.is_dir():
+    static_root = static_dir.resolve()
+    assets_dir = static_root / "assets"
+
+    if assets_dir.is_dir():
+        app.mount("/assets", StaticFiles(directory=assets_dir), name="frontend-assets")
+
+    @app.get("/", include_in_schema=False)
+    def frontend_index():
+        return FileResponse(static_root / "index.html")
+
+    @app.get("/{full_path:path}", include_in_schema=False)
+    def frontend_spa(full_path: str):
+        requested_file = (static_root / full_path).resolve()
+        if requested_file.is_file() and static_root in requested_file.parents:
+            return FileResponse(requested_file)
+        return FileResponse(static_root / "index.html")
 
