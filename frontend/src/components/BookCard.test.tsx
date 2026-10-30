@@ -1,0 +1,4 @@
+import { render,screen } from '@testing-library/react';import { MemoryRouter } from 'react-router-dom';import { describe,expect,it } from 'vitest';import { BookCard } from './BookCard';
+const book={id:7,title:'Тестовая книга',isbn:'9781234567890',description:'Достаточно подробное описание тестовой книги.',year:2026,rating:4.8,copies_total:2,copies_available:1,author_id:1,author:{id:1,name:'Автор'},genres:[{id:1,name:'Технологии'}]};
+describe('BookCard',()=>{it('shows accessible book data and link',()=>{render(<MemoryRouter><BookCard book={book}/></MemoryRouter>);expect(screen.getByRole('heading',{name:'Тестовая книга'})).toBeInTheDocument();expect(screen.getByRole('link',{name:'Подробнее'})).toHaveAttribute('href','/books/7');expect(screen.getByText('Доступно: 1')).toBeInTheDocument()})});
+
