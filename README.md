@@ -9,7 +9,7 @@ Full-stack приложение по курсу «Современные веб-
 
 [![Открыть сайт](https://img.shields.io/badge/ОТКРЫТЬ_САЙТ-BookNest-22C55E?style=for-the-badge&logo=render&logoColor=white)](https://booknest-library-e0nk.onrender.com)
 [![Swagger API](https://img.shields.io/badge/SWAGGER-API_DOCS-85EA2D?style=for-the-badge&logo=swagger&logoColor=black)](https://booknest-library-e0nk.onrender.com/api/docs)
-[![CI](https://img.shields.io/github/actions/workflow/status/arlequin-stack/booknest-library/ci.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white&label=CI)](https://github.com/arlequin-stack/booknest-library/actions)
+[![CI](https://img.shields.io/github/actions/workflow/status/arlequin-stack/Zhuanyshev-Rustem-25-IST-1-BookNest/ci.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white&label=CI)](https://github.com/arlequin-stack/Zhuanyshev-Rustem-25-IST-1-BookNest/actions)
 
 </div>
 
