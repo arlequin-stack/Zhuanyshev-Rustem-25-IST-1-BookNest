@@ -8,7 +8,7 @@
 
 1. Войти на [Render](https://dashboard.render.com/) через GitHub.
 2. Нажать **New → Blueprint**.
-3. Выбрать репозиторий `arlequin-stack/booknest-library`.
+3. Выбрать репозиторий `arlequin-stack/Zhuanyshev-Rustem-25-IST-1-BookNest`.
 4. Render найдёт `render.yaml`. Нажать **Deploy Blueprint**.
 5. Дождаться статуса **Live** у `booknest-library`.
 6. Открыть `https://booknest-library.onrender.com`.
