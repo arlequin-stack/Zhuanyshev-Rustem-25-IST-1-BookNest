@@ -1,0 +1,13 @@
+.venv
+__pycache__
+.pytest_cache
+.ruff_cache
+.coverage
+htmlcov
+.env
+.env.*
+*.py[cod]
+*.db
+*.sqlite*
+tests
+.DS_Store

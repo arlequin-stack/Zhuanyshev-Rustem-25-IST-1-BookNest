@@ -1,0 +1,2 @@
+export function StatePanel({kind,title,text,action}:{kind:'loading'|'empty'|'error';title:string;text:string;action?:()=>void}){return <section className={`state-panel state-panel--${kind}`} role={kind==='error'?'alert':'status'}><span className="state-icon" aria-hidden="true">{kind==='loading'?'◌':kind==='error'?'!':'⌕'}</span><h2>{title}</h2><p>{text}</p>{action&&<button className="button" onClick={action}>Повторить</button>}</section>}
+
